@@ -6,7 +6,7 @@
         {
             try
             {
-                string fileName = $"log_{DateTime.Now:yyyyMMdd_HHmmSS}.txt";
+                string fileName = $"log_{DateTime.Now:yyyyMMdd_HHmmss}.txt";
                 string filePath = Path.Combine(Environment.CurrentDirectory, fileName);
 
                 using (StreamWriter streamWriter = new StreamWriter(filePath, true))
