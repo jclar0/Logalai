@@ -9,13 +9,18 @@ namespace Logálaí.Test
         [TestMethod]
         public void TestMethod1()
         {
-            Log log = new Log();
+            // Arrange
+            using (StringWriter sw = new StringWriter())
+            {
+                Console.SetOut(sw);
 
-            log.Error("This is a test error.");
-            log.Warning("This is a warning error.");
-            log.Info("This is an informational message.");
+                // Act
+                Log.Info("Hello, world!");
 
-            Assert.IsNotNull(log);
+                // Assert
+                string output = sw.ToString();
+                Assert.IsTrue(output.Contains("Hello, world!"));
+            }
         }
     }
 }
