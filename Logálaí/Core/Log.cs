@@ -39,7 +39,7 @@
 
             string toLog = $"{DateTime.Now} {typeToLog} {message}";
 
-            Console.WriteLine(toLog;
+            Console.WriteLine(toLog);
             Write.AppendToFile(toLog);
         }
 
