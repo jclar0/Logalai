@@ -4,18 +4,30 @@
     {
         Write write = new Write();
 
+        /// <summary>
+        /// Log an error to the console.
+        /// </summary>
+        /// <param name="message">The content of the error.</param>
         public static void Error(string message)
         {
             Log instance = new Log();
             instance.LogMsg(0, message);
         }
 
+        /// <summary>
+        /// Log a warning to the console.
+        /// </summary>
+        /// <param name="message">The content of the warning.</param>
         public static void Warning(string message)
         {
             Log instance = new Log();
             instance.LogMsg(1, message);
         }
 
+        /// <summary>
+        /// Log a general message to the console.
+        /// </summary>
+        /// <param name="message">The content of the message.</param>
         public static void Info(string message)
         {
             Log instance = new Log();
