@@ -17,7 +17,7 @@
             catch (Exception ex)
             {
                 Log log = new Log();
-                log.Error($"Unable to write to file! {ex.Message}");
+                Console.WriteLine($"Unable to write to file! {ex.Message}");
             }
         }
     }
