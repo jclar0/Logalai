@@ -4,20 +4,43 @@
     {
         public void Error(string message)
         {
-            Console.WriteLine($"{DateTime.Now} [ERROR] " + message);
-            Write.AppendToFile($"{DateTime.Now} [ERROR] " + message);
+            LogMsg(0, message);
         }
 
         public void Warning(string message)
         {
-            Console.WriteLine($"{DateTime.Now} [WARNING] " + message);
-            Write.AppendToFile($"{DateTime.Now} [WARNING] " + message);
+            LogMsg(1, message);
         }
 
         public void Info(string message)
         {
-            Console.WriteLine($"{DateTime.Now} [INFO] " + message);
-            Write.AppendToFile($"{DateTime.Now} [INFO] " + message);
+            LogMsg(2, message);
+        }
+
+        private void LogMsg(int level, string message)
+        {
+            string typeToLog;
+
+            switch (level)
+            {
+                case 0:
+                    typeToLog = "[ERROR]";
+                    break;
+                case 1:
+                    typeToLog = "[WARNING]";
+                    break;
+                case 2:
+                    typeToLog = "[INFO]";
+                    break;
+                default:
+                    typeToLog = "[UNKNOWN]";
+                    break;
+            }
+
+            string toLog = $"{DateTime.Now} {typeToLog} {message}";
+
+            Console.WriteLine(toLog;
+            Write.AppendToFile(toLog);
         }
 
         public Log()
