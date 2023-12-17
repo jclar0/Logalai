@@ -2,19 +2,24 @@
 {
     public class Log
     {
-        public void Error(string message)
+        Write write = new Write();
+
+        public static void Error(string message)
         {
-            LogMsg(0, message);
+            Log instance = new Log();
+            instance.LogMsg(0, message);
         }
 
-        public void Warning(string message)
+        public static void Warning(string message)
         {
-            LogMsg(1, message);
+            Log instance = new Log();
+            instance.LogMsg(1, message);
         }
 
-        public void Info(string message)
+        public static void Info(string message)
         {
-            LogMsg(2, message);
+            Log instance = new Log();
+            instance.LogMsg(2, message);
         }
 
         private void LogMsg(int level, string message)
@@ -40,7 +45,7 @@
             string toLog = $"{DateTime.Now} {typeToLog} {message}";
 
             Console.WriteLine(toLog);
-            Write.AppendToFile(toLog);
+            write.AppendToFile(toLog);
         }
 
         public Log()

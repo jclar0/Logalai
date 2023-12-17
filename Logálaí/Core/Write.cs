@@ -2,7 +2,7 @@
 {
     internal class Write
     {
-        public static void AppendToFile(string message)
+        public void AppendToFile(string message)
         {
             try
             {
