@@ -17,11 +17,14 @@ namespace Example
     {
         public void Main()
         {
-            Log log = new Log();
+            // Do you want to save messages to a text file?
+            Log.saveToLog = true;
+            // If so, how many log files should there be at any one time?
+            Log.maxLogs = 5;
             
-            log.Error("This is an error message.");
-            log.Warning("This is a warning message.");
-            log.Info("This is a message.");
+            Log.Error("This is an error message.");
+            Log.Warning("This is a warning message.");
+            Log.Info("This is a message.");
         }
     }
 }
