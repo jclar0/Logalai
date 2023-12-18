@@ -5,6 +5,12 @@
         Write write = new Write();
 
         /// <summary>
+        /// Should a log file be generated?
+        /// Default value is true.
+        /// </summary>
+        public static bool saveToLog { get; set; } = true;
+
+        /// <summary>
         /// Log an error to the console.
         /// </summary>
         /// <param name="message">The content of the error.</param>
