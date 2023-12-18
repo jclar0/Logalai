@@ -10,7 +10,7 @@
             {
                 try
                 {
-                    int maxLogs = 5; // The maximum number of log files that can be created
+                    int maxLogs = Log.maxLogs; // The maximum number of log files that can be created
                     string dirPath = Environment.CurrentDirectory;
                     string fileName = $"log_{DateTime.Now:yyyyMMdd_HHmmss}.txt";
                     // Get all the existing log files, store them in an array
