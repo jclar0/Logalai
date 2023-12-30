@@ -2,19 +2,6 @@
 {
     public class Log
     {
-        Write write = new Write();
-
-        /// <summary>
-        /// Should a log file be generated?
-        /// Default value is true.
-        /// </summary>
-        public static bool saveToLog { get; set; } = true;
-        /// <summary>
-        /// The maximum number of log files that should be created.
-        /// Default value is 5.
-        /// </summary>
-        public static int maxLogs { get; set; } = 5;
-
         /// <summary>
         /// Log an error to the console.
         /// </summary>
@@ -68,7 +55,6 @@
             string toLog = $"{DateTime.Now} {typeToLog} {message}";
 
             Console.WriteLine(toLog);
-            write.AppendToFile(toLog);
         }
 
         public Log()
